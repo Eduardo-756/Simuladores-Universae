@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador 1</title>
+    <link rel="stylesheet" href="simulador.css">
+    <link rel="website icon", type="jpg" href="Recursos_Plataforma_1/logo.jpg">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <a href="Tarea1.html">
+                <img src="Recursos_Plataforma_1/InterfazHome/HeaderWebUniversae.png" alt="Universae Logo">
+            </a>
+        </div>
+    </header>
+    <div class="simulator-main">
+        <iframe src="https://html-classic.itch.zone/html/8561483/index.html" frameborder="0" width="800" height="660"></iframe>
+    </div>
+    <div class="content">
+        <div class="text">
+            <h2>Mantenimiento de los equipos y herramientas de extinción de incendios forestales</h2>
+            <p>Grado: Coordinación de emergencias y protección civil.</p>
+            <p>Asignatura: Gestión de recursos de emergencias y protección civil</p>
+            <p>Unidad: Planificación y supervisión del mantenimiento de equipos, medios técnicos e instalaciones.</p>
+            <p>Descripción: En un campo de prácticas sumido en el desorden y la confusión tienes que encontrar y colocar las partes de los EPIs utilizados en la extinción de incendios forestales.</p>
+            <p>Duración aproximada: 10 minutos.</p>
+            <p>Nivel de dificultad: Fácil.</p>
+        </div>
+        <div class="simulators">
+            <img src="Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor1.png" alt="Simulator 2" class="simulator" onclick="openPopup('Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor1.png', 0)">
+            <img src="Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor4.png" alt="Simulator 3" class="simulator" onclick="openPopup('Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor4.png', 1)">
+            <img src="Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor0.png" alt="Simulator 4" class="simulator" onclick="openPopup('Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor0.png', 2)">
+            <img src="Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor2.png" alt="Simulator 5" class="simulator" onclick="openPopup('Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor2.png', 3)">
+            <img src="Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor3.png" alt="Simulator 6" class="simulator" onclick="openPopup('Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor3.png', 4)">
+        </div>
+    </div>
+
+    <div id="popup" class="simulator-popup" onclick="closePopup(event)">
+        <img src="" alt="Popup Image" id="popup-image" class="popup-image">
+        <button class="prev" onclick="changeImage('prev')"><img src="Recursos_Plataforma_1/InterfazGame/Flecha izquierda.png" alt=""></button>
+        <button class="next" onclick="changeImage('next')"><img src="Recursos_Plataforma_1/InterfazGame/Flecha derecha.png" alt=""></button>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/UNIVERSAE/" target="_blank">
+                <img src="images/facebook.svg">
+            </a>
+            <a href="https://www.instagram.com/_universae/?hl=es" target="_blank">
+                <img src="images/instagram.svg">
+            </a>
+            <a href="https://www.twitch.com/c/UNIVERSAE_FP" target="_blank">
+                <img src="images/twitch.svg">
+            </a>
+            <a href="https://www.youtube.com/c/UNIVERSAE_FP" target="_blank">
+                <img src="images/youtube.svg">
+            </a>
+            <a href="https://www.linkedin.com/school/universae" target="_blank">
+                <img src="images/linkedin.svg">
+            </a>
+            <a href="https://www.tiktok.com/@_universae" target="_blank">
+                <img src="images/tiktok.svg">
+            </a>
+            <a href="https://twitter.com/_Universae" target="_blank">
+                <img src="images/twitter.svg">
+            </a>
+            <a href="https://universae.com" target="_blank">
+                <img src="images/google.svg">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const images = [
+            "Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor1.png",
+            "Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor4.png",
+            "Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor0.png",
+            "Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor2.png",
+            "Recursos_Plataforma_1/InterfazGame/Miniaturas/Ascensor/Ascensor3.png"
+        ];
+
+        function openPopup(imageSrc, index) {
+            document.getElementById('popup-image').src = imageSrc;
+            document.getElementById('popup').setAttribute('data-index', index);
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        function closePopup(event) {
+            if (event.target === document.getElementById('popup')) {
+                document.getElementById('popup').style.display = 'none';
+            }
+        }
+
+        function changeImage(direction) {
+            let currentIndex = parseInt(document.getElementById('popup').getAttribute('data-index'));
+            if (direction === 'prev') {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+            } else {
+                currentIndex = (currentIndex + 1) % images.length;
+            }
+            document.getElementById('popup-image').src = images[currentIndex];
+            document.getElementById('popup').setAttribute('data-index', currentIndex);
+        }
+    </script>
+</body>
+</html>

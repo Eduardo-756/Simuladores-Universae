@@ -1,0 +1,133 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #b6e1f9;
+    margin: 0;
+}
+
+header {
+    background-color: #134cBf;
+    padding: 30px;
+    margin-bottom: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header-top img {
+    width: 250px;
+    margin-left: 20px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin-top: 30px; 
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; 
+    margin-bottom: 100px;
+
+}
+
+.simulator-main {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.text {
+    text-align: left;
+    width: 48%; 
+}
+
+.text h2 {
+    font-weight: bold;
+    color: #101820;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.text p {
+    color: #101820;
+    margin-bottom: 20px; 
+}
+
+.simulators {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 48%; 
+}
+
+.simulator {
+    width: 40%; 
+    margin-bottom: 10px;
+}
+
+.simulator-popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 24, 32, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-image {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.prev, 
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    border: none;
+    background: none;
+    color: #f7f7f7;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+footer {
+    background-color: #134cBf;
+    padding: 25px;
+    text-align: center;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 40px;
+    filter: invert(100%);
+}
+
+.social-links a:hover {
+    filter: invert(100%);
+}
